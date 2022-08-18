@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath 'com.android.tools.build:gradle:7.3.0-rc01'
         classpath ('com.uber:okbuck:0.16.3') {
           exclude module: 'gradle'
         }
@@ -97,9 +97,6 @@ subprojects { project ->
                 packagingOptions {
                     exclude 'META-INF/LICENSE'
                 }
-                dexOptions {
-                    javaMaxHeapSize "2g"
-                }
             }
         }
     }
@@ -119,7 +116,6 @@ def addCommonConfigurationForAndroidModules(Project project) {
         buildToolsVersion config.build.buildToolsVersion
 
         defaultConfig {
-            javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = false
             minSdkVersion config.build.minSdkVersion
             targetSdkVersion config.build.targetSdkVersion
             vectorDrawables.useSupportLibrary = true

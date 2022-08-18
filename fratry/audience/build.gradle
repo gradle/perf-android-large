@@ -7,4 +7,3 @@ dependencies {
     api deps.other.javaxInject
     api deps.other.geo
 }
-android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = false
