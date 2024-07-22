@@ -1,7 +1,15 @@
 buildscript {
     repositories {
+        maven {
+            url "https://repo.gradle.org/gradle/libs/"
+            content {
+                includeModule "com.uber", "okbuck"
+                includeModule "com.google.android.exoplayer", "exoplayer"
+                includeModule "com.lovedise", "permissiongen"
+            }
+        }
         mavenLocal()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -15,7 +23,17 @@ buildscript {
 allprojects {
     project -> project.apply from: rootProject.file('dependencies.gradle')
     repositories {
-        jcenter()
+        maven {
+            url "https://repo.gradle.org/gradle/libs/"
+            content {
+                includeModule "com.google.android.exoplayer", "exoplayer"
+                includeModule "com.meetic.shuffle", "shuffle"
+                includeModule "com.meetic.dragueur", "dragueur"
+                includeModule "com.futuremind.recyclerfastscroll", "fastscroll"
+                includeModule "com.lovedise", "permissiongen"
+            }
+        }
+        mavenCentral()
     }
 
     def androidHome = System.getenv("ANDROID_HOME")
