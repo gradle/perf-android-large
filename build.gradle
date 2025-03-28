@@ -15,7 +15,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:8.4.0'
         classpath ('com.uber:okbuck:0.16.3') {
           exclude module: 'gradle'
         }
@@ -129,12 +129,12 @@ def addCommonConfigurationForAndroidModules(Project project) {
         api 'com.google.auto.service:auto-service:1.0-rc2'
     }
     project.android {
-        compileSdkVersion config.build.compileSdkVersion
-        buildToolsVersion config.build.buildToolsVersion
+        namespace = "org.gradle.test.${project.name}"
+        compileSdkVersion = config.build.compileSdkVersion
 
         defaultConfig {
-            minSdkVersion config.build.minSdkVersion
-            targetSdkVersion config.build.targetSdkVersion
+            minSdkVersion = config.build.minSdkVersion
+            targetSdkVersion = config.build.targetSdkVersion
             vectorDrawables.useSupportLibrary = true
         }
 
@@ -144,7 +144,7 @@ def addCommonConfigurationForAndroidModules(Project project) {
         }
 
         lintOptions {
-            abortOnError false
+            abortOnError = false
         }
     }
 }
