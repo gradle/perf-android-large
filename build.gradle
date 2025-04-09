@@ -120,8 +120,8 @@ subprojects { project ->
 }
 
 def addCommonConfigurationForJavaModules(Project project) {
-    project.sourceCompatibility = JavaVersion.VERSION_1_7
-    project.targetCompatibility = JavaVersion.VERSION_1_7
+    project.java.sourceCompatibility = JavaVersion.VERSION_1_7
+    project.java.targetCompatibility = JavaVersion.VERSION_1_7
 }
 
 def addCommonConfigurationForAndroidModules(Project project) {
