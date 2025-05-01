@@ -103,7 +103,7 @@ subprojects { project ->
                 }
                 signingConfigs {
                     debug {
-                        storeFile file('config/signing/debug.keystore')
+                        storeFile rootProject.file('config/signing/debug.keystore')
                     }
                 }
                 buildTypes {
